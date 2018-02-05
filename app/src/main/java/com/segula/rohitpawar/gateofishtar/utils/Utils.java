@@ -59,58 +59,58 @@ public class Utils {
     private int calculate_damage_taken(Date date, String champion, Context context) {
 
         if (holly_day(date) || invincible_champion(champion)) {
-            Toast.makeText(context, "No one is guarding the gate", Toast.LENGTH_LONG).show();
+           // Toast.makeText(context, "No one is guarding the gate", Toast.LENGTH_LONG).show();
             return 0;
             //"Janna" demon of Wind spawned
         } else if (date.getHours() == 6 && date.getMinutes() >= 0 && date.getMinutes() <= 29) {
-            Toast.makeText(context, "Janna is guarding the gate", Toast.LENGTH_LONG).show();
+           // Toast.makeText(context, "Janna is guarding the gate", Toast.LENGTH_LONG).show();
             return 7;
         }
         //"Tiamat" goddess of Oceans spawned
         else if (date.getHours() == 6 && date.getMinutes() >= 30 && date.getMinutes() <= 59) {
-            Toast.makeText(context, "Tiamat is guarding the gate", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(context, "Tiamat is guarding the gate", Toast.LENGTH_LONG).show();
             return 18;
         }
         //"Mithra" goddess of sun spawned
         else if (date.getHours() == 7 && date.getMinutes() >= 0 && date.getMinutes() <= 59) {
-            Toast.makeText(context, "Mithra is guarding the gate", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(context, "Mithra is guarding the gate", Toast.LENGTH_LONG).show();
             return 25;
         }
         //"Warwick" God of war spawned
         else if (date.getHours() == 8 && date.getMinutes() >= 0 && date.getMinutes() <= 29) {
-            Toast.makeText(context, "Warwick is guarding the gate", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(context, "Warwick is guarding the gate", Toast.LENGTH_LONG).show();
             return 18;
         }
         //"Kalista" demon of agony spawned
         else if (date.getHours() == 8 && date.getHours() <= 14 && date.getMinutes() >= 30 && date.getMinutes() <= 59) {
-            Toast.makeText(context, "Kalista is guarding the gate", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(context, "Kalista is guarding the gate", Toast.LENGTH_LONG).show();
             return 7;
         }
         //"Ahri" goddess of wisdom spawned
         else if (date.getHours() == 15 && date.getMinutes() >= 0 && date.getMinutes() <= 29) {
-            Toast.makeText(context, "Ahri is guarding the gate", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(context, "Ahri is guarding the gate", Toast.LENGTH_LONG).show();
             return 13;
         }
         //"Brand" god of fire spawned
         else if (date.getHours() == 15 && date.getMinutes() >= 0 || date.getHours() == 16 && date.getMinutes() <= 59) {
-            Toast.makeText(context, "Brand is guarding the gate", Toast.LENGTH_LONG).show();
+           // Toast.makeText(context, "Brand is guarding the gate", Toast.LENGTH_LONG).show();
             return 25;
         }
         //"Rumble" god of lightning spawned
         else if (date.getHours() == 17 && date.getMinutes() >= 0 && date.getMinutes() <= 59) {
-            Toast.makeText(context, "Rumble is guarding the gate", Toast.LENGTH_LONG).show();
+           // Toast.makeText(context, "Rumble is guarding the gate", Toast.LENGTH_LONG).show();
             return 18;
         }
 
         //"Skarner" the scorpion demon spawned
         else if (date.getHours() >= 18 && date.getHours() <= 19 && date.getMinutes() >= 0 && date.getMinutes() <= 59) {
-            Toast.makeText(context, "Skarner is guarding the gate", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(context, "Skarner is guarding the gate", Toast.LENGTH_LONG).show();
             return 7;
         }
 
         //"Luna" The goddess of the moon spawned
         else if (date.getHours() == 20 && date.getMinutes() <= 59) {
-            Toast.makeText(context, "Luna is guarding the gate", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(context, "Luna is guarding the gate", Toast.LENGTH_LONG).show();
             return 13;
         } else {
             return 0;
