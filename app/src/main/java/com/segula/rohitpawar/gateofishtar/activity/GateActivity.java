@@ -19,12 +19,13 @@ import java.util.Date;
 import java.util.List;
 
 public class GateActivity extends AppCompatActivity {
+
     BaseStore db = new BaseStore(this);
-    private String champion_name = "", currentDateTime;
+    private String  currentDateTime;
     private List<ChampionEntry> championEntryList = new ArrayList<>();
     private ChampionMaster championMaster;
     private ArrayList<String> intervals = new ArrayList<>();
-    Date dbdate, curdate;
+    private Date dbdate, curdate;
     LinearLayout layout;
 
     @Override
@@ -32,6 +33,8 @@ public class GateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gate);
         layout =( LinearLayout) findViewById(R.id.gate_layout);
+
+        //Calculate Current timestamp
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             currentDateTime = dateFormat.format(new Date()); // Find todays date
@@ -41,16 +44,20 @@ public class GateActivity extends AppCompatActivity {
 
         }
 
-
+       //Get selected champion from previous screen
         String champion_name = getIntent().getStringExtra("CHAMPION");
 
+
+        //Get all last gate entries from database for selected champion
         championEntryList = db.getAllEntryByChampion(champion_name);
 
+        //Add first entry for selected champion
         if (championEntryList.size() <= 0) {
             db.addCampionEntry(new ChampionEntry(champion_name, currentDateTime));
         }
 
 
+        //Get all champion to calculate total damage received
         championEntryList = db.getAllEntryByChampion(champion_name);
         for (int i = 0; i < championEntryList.size(); i++) {
 
@@ -84,6 +91,7 @@ public class GateActivity extends AppCompatActivity {
         Log.i("ROHIT", String.valueOf(damage));
 
 
+        //After calculating damage received , check weather Champion is alive or dead
         championMaster = db.getChampionByChampionName(champion_name);
         if (championMaster != null) {
             int championhealth = championMaster.getHealth();

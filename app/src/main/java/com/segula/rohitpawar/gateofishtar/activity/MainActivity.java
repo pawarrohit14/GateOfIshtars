@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Add Champions to dropdown spinner
     private void loadChampionData() {
 
         if (db.getAllChampions().size() <= 0) {

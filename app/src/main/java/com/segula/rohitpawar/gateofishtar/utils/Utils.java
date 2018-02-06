@@ -118,7 +118,7 @@ public class Utils {
 
     }
 
-
+   //Tuesday & Thrudsay are holly days , champion can cross the gate without any damage
     private boolean holly_day(Date date) {
 
         Calendar c = Calendar.getInstance();
@@ -134,6 +134,7 @@ public class Utils {
 
     }
 
+    //Wizard & Spirit are invincible champions , no harm from gaurd at the gate
     private boolean invincible_champion(String champion) {
 
         if (champion.equals(WIZARD)) {
